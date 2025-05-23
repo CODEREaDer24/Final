@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GARYAGE</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-size: 4em;
+      color: #ffcc00;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 1.5em;
+      padding: 15px 40px;
+      margin: 10px;
+      background-color: #ffcc00;
+      border: none;
+      color: #0a0a0a;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    #message, #signup {
+      margin-top: 40px;
+      display: none;
+    }
+
+    input[type="text"], input[type="email"] {
+      padding: 10px;
+      margin: 10px;
+      width: 250px;
+      font-size: 1em;
+    }
+
+    #sellerBtn {
+      display: none;
+      margin-top: 20px;
+      background-color: #00ff88;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>GARYAGE</h1>
+  <p>The new era is here. Choose your path.</p>
+
+  <button onclick="respond('gary')">I’m Gary</button>
+  <button onclick="respond('notgary')">I’m Not Gary</button>
+
+  <div id="message"></div>
+
+  <div id="signup">
+    <h2>Want in?</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email"><br>
+    <button>Sign Up</button>
+  </div>
+
+  <button id="sellerBtn">Become a Seller</button>
+
+  <script>
+    function respond(identity) {
+      const msg = document.getElementById('message');
+      const signup = document.getElementById('signup');
+      const seller = document.getElementById('sellerBtn');
+      msg.style.display = 'block';
+      signup.style.display = 'block';
+      seller.style.display = 'inline-block';
+
+      if (identity === 'gary') {
+        msg.innerHTML = `
+          <h2>Welcome, Gary.</h2>
+          <p>Thanks for showing up. You’re early — that matters.</p>
+          <p>This project is a hybrid marketplace built for real-time selling, auctioning, and hype drops. 
+          We wanted to show you first. Let's see where it goes.</p>
+        `;
+      } else {
+        msg.innerHTML = `
+          <h2>Welcome to the new age.</h2>
+          <p>We’re building the marketplace of the future — built for fast sellers, flash drops, and high stakes bids.
+          You don’t need permission. You need in.</p>
+        `;
+      }
+    }
+  </script>
+</body>
+</html>
